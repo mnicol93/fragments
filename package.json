@@ -1,0 +1,58 @@
+{
+  "name": "fragments",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Fragments back-end API",
+  "main": "index.js",
+  "scripts": {
+    "test:watch": "jest -c jest.config.js --runInBand --watch --",
+    "test:integration": "hurl --test --glob \"tests/integration/**/*.hurl\"",
+    "test": "jest -c jest.config.js --runInBand --",
+    "coverage": "jest -c jest.config.js --runInBand --coverage",
+    "lint": "eslint --config .eslintrc.js src/** tests/**",
+    "start": "node src/index.js",
+    "dev": "LOG_LEVEL=debug nodemon src/index.js --watch src",
+    "debug": "LOG_LEVEL=debug nodemon --inspect=0.0.0.0:9229 src/index.js --watch src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mnicol93/fragments.git"
+  },
+  "keywords": [],
+  "author": "Marc Nicolas Oliva",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@orangeopensource/hurl": "^1.6.5",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.7.0",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16",
+    "prettier": "2.6.2",
+    "supertest": "^6.2.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.142.0",
+    "@aws-sdk/client-s3": "^3.137.0",
+    "@aws-sdk/lib-dynamodb": "^3.142.0",
+    "aws-jwt-verify": "^2.1.3",
+    "compression": "^1.7.4",
+    "content-type": "^1.0.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "helmet": "^5.0.2",
+    "http-auth": "^4.1.9",
+    "http-auth-passport": "^1.0.6",
+    "markdown-it": "^12.3.2",
+    "mz": "^2.7.0",
+    "mime-type": "^4.0.0",
+    "nanoid": "^3.2.0",
+    "passport": "^0.6.0",
+    "passport-http-bearer": "^1.0.1",
+    "pino": "^7.11.0",
+    "pino-http": "^7.0.0",
+    "pino-pretty": "^7.6.1",
+    "sharp": "^0.30.7",
+    "stoppable": "^1.1.0"
+  }
+}
